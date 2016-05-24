@@ -1,0 +1,13 @@
+pssh -h hosts.txt --inline-stdout -O "stricthostkeychecking no" "du -sch /home/sajeesh/ && echo "============================================"" >> output.txt
+
+cat ../../output.txt 
+[1] 18:19:21 [SUCCESS] art1456.admpl.comp.tf3.yahoo.com
+12K	/home/sajeesh/
+12K	total
+============================================
+[2] 18:19:21 [SUCCESS] art767.admpl.comp.tf7.yahoo.com
+612K	/home/sajeesh/
+612K	total
+============================================
+
+

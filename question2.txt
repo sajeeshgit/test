@@ -1,0 +1,39 @@
+#
+# Cookbook Name:: test
+# Recipe:: default
+#
+# Copyright 2016, YOUR_COMPANY_NAME
+#
+# All rights reserved - Do Not Redistribute
+#
+#
+#
+
+ ### Checks the memory usage and converts it into % and stores out to a variable
+
+$hostname = `hostname`
+
+def resart_httpd
+
+   `service httpd stop`
+   `sleep 15`
+   `service httpd start`
+
+end
+
+
+
+a=`free -g | awk 'FNR == 2 {print $4}'`
+
+b = a.to_i
+
+if b  < 1
+
+    restart_httpd
+
+else
+
+     puts "The memory is back to normal; no need to restart on #{hostname}"
+
+end
+
